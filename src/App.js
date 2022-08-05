@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+
+import useStyles from "./styles";
+import useAlan from "./utils/Alan";
+
+import Movies from "./components/Movies/Movies";
+import MovieInfo from "./components/MovieInfo/MovieInfo";
+import NavBar from "./components/NavBar/NavBar";
+import Profile from "./components/Profile/Profile";
+import Actors from "./components/Actors/Actors";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const classes = useStyles();
+	const alanBtnContainer = useRef();
+	const location = useLocation();
+
+	useAlan();
+
+	// if (location.pathname === "/approved") window.location.href = "/";
+
+	return (
+		<div className={classes.root}>
+			<CssBaseline />
+			<NavBar />
+			<main className={classes.content}>
+				<div className={classes.toolbar} />
+				<Routes>
+					<Route exact path="/" element={<Movies />} />
+					<Route path="/approved" element={<Movies />} />
+					<Route
+						exact
+						path="/movie/:id"
+						element={<MovieInfo />}
+					/>
+					<Route
+						exact
+						path="/profile/:id"
+						element={<Profile />}
+					/>
+					<Route exact path="/actors/:id" element={<Actors />} />
+				</Routes>
+			</main>
+			<div ref={alanBtnContainer}></div>
+		</div>
+	);
 }
 
 export default App;
