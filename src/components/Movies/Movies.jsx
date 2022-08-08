@@ -33,7 +33,7 @@ const Movies = () => {
 
 	if (!data.results.length) {
 		return (
-			<Box display="flex" justifyContent="center" mt="1.2rem">
+			<Box display="flex" justifyContent="center" mt="3rem">
 				<Typography variant="h4">
 					No movies that match name
 					<br />

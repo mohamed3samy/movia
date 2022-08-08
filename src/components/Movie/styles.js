@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
 	title: {
 		color: theme.palette.text.primary,
 		textOverflow: "ellipsis",
-		width: "95%",
+		width: "230px",
 		fontSize: "0.8rem",
 		whiteSpace: "nowrap",
 		overflow: "hidden",

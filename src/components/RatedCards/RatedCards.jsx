@@ -11,11 +11,7 @@ const RatedCards = ({ title, movies }) => {
 			<Typography variant="h5" gutterBottom>
 				{title}
 			</Typography>
-			<Box
-				display="flex"
-				flexWrap="wrap"
-				className={classes.container}
-			>
+			<Box className={classes.container}>
 				{movies?.results.map((movie, index) => (
 					<Movie key={movie.id} movie={movie} index={index} />
 				))}

@@ -35,7 +35,7 @@ const Profile = () => {
 	};
 
 	return (
-		<Box>
+		<Box overflow="hidden">
 			<Box
 				display="flex"
 				justifyContent="space-between"
@@ -55,7 +55,7 @@ const Profile = () => {
 					here!
 				</Typography>
 			) : (
-				<Box>
+				<Box overflow="hidden">
 					<RatedCards
 						title="Favorite Movies"
 						movies={favoriteMovies}
