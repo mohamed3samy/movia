@@ -1,13 +1,7 @@
-import { useState, useEffect } from "react";
-import {
-	Box,
-	CircularProgress,
-	useMediaQuery,
-	Typography,
-} from "@mui/material";
+import { useState } from "react";
+import { Box, useMediaQuery, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
-import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import { useGetMoviesQuery } from "../../services/TMDB";
 import MovieList from "../MovieList/MovieList";
 import Loader from "../UI/Loader";
@@ -27,9 +21,13 @@ const Movies = () => {
 		searchQuery,
 	});
 
+	console.log(data);
+
 	const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
 
-	const numberOfMovies = lg ? 17 : 21;
+	const sm = useMediaQuery((theme) => theme.breakpoints.only("sm"));
+
+	const numberOfMovies = lg || sm ? 17 : 16;
 
 	if (isFetching) return <Loader />;
 

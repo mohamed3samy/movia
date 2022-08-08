@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	AppBar,
@@ -30,7 +30,6 @@ const NavBar = () => {
 	const classes = useStyles();
 	const isMobile = useMediaQuery("(max-width:600px)");
 	const theme = useTheme();
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -61,8 +60,7 @@ const NavBar = () => {
 		};
 
 		logInUser();
-		// navigate("/");
-	}, [token, dispatch, sessionIdFromLocalStorage, navigate]);
+	}, [token, dispatch, sessionIdFromLocalStorage]);
 
 	return (
 		<>
@@ -89,9 +87,9 @@ const NavBar = () => {
 						onClick={colorMode.toggleColorMode}
 					>
 						{theme.palette.mode === "dark" ? (
-							<Brightness7 />
+							<Brightness7 width="100%" height="100%" />
 						) : (
-							<Brightness4 />
+							<Brightness4 width="100%" height="100%" />
 						)}
 					</IconButton>
 
@@ -108,7 +106,6 @@ const NavBar = () => {
 								component={Link}
 								to={`/profile/${user.id}`}
 								className={classes.linkButton}
-								onClick={() => {}}
 							>
 								{!isMobile && <>My Movies &nbsp;</>}
 
@@ -120,7 +117,6 @@ const NavBar = () => {
 							</Button>
 						)}
 					</div>
-
 					{isMobile && <Search />}
 				</Toolbar>
 			</AppBar>

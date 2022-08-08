@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { TextField, InputAdornment } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
 
@@ -20,8 +20,6 @@ const Search = () => {
 	};
 
 	if (location.pathname !== "/") return null;
-
-	
 
 	return (
 		<div className="searchContainer">

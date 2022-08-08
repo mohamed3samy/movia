@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
 		[theme.breakpoints.down("md")]: {
 			justifyContent: "center",
 		},
-		[theme.breakpoints.up("lg")]: {
+		[theme.breakpoints.up("xl")]: {
 			gap: "5px",
 		},
 	},

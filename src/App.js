@@ -18,7 +18,9 @@ function App() {
 
 	useAlan();
 
-	// if (location.pathname === "/approved") window.location.href = "/";
+	setTimeout(() => {
+		if (location.pathname === "/approved") window.location.href = "/";
+	}, 500);
 
 	return (
 		<div className={classes.root}>

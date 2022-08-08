@@ -18,7 +18,6 @@ import {
 	FavoriteBorderOutlined,
 	Remove,
 	ArrowBack,
-	SettingsInputSvideo,
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -47,10 +46,7 @@ const MovieInfo = () => {
 	const lsSessionId = localStorage.getItem("session_id");
 
 	const { data, isFetching, error } = useGetMovieQuery(id);
-	const {
-		data: recommendations,
-		isFetching: isRecommendationsFetching,
-	} = useGetRecommendationsQuery({
+	const { data: recommendations } = useGetRecommendationsQuery({
 		movie_id: id,
 		list: "/recommendations",
 	});

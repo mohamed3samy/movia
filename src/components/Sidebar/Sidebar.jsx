@@ -8,8 +8,6 @@ import {
 	ListItemText,
 	ListSubheader,
 	ListItemIcon,
-	Box,
-	CircularProgress,
 } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
