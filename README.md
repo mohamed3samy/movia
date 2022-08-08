@@ -2,11 +2,11 @@
 
 ![App Screenshot](src/assets/images/movia.png)
 
-Movie Streaming App with Complete Features like Netflix, it combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Material UI, Redux Toolkit, Alan AI.
+Movie Streaming App with Complete Features like Netflix combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Material UI, Redux Toolkit, and Alan AI.
 
-This application includes user authentication, dark mode, sort movie on the basis of categories or genres, viewing movie and actor details, adding a movie to favorites or watchlist and many more functionalities.
+This application includes user authentication, dark mode, sorting movies based on categories or genres, viewing movie and actor details, adding a movie to favorites or watchlist, and many more functionalities.
 
-Alan works as in-app voice assistant which create conversational experiences for Movia.
+Alan works as an in-app voice assistant who creates conversational experiences for Movia.
 
 # Getting Started with Create React App
 

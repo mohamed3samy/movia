@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
+import { Toaster } from "react-hot-toast";
 
 import useStyles from "./styles";
 import useAlan from "./utils/Alan";
@@ -45,6 +46,7 @@ function App() {
 				</Routes>
 			</main>
 			<div ref={alanBtnContainer}></div>
+			<Toaster />
 		</div>
 	);
 }

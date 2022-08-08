@@ -21,6 +21,7 @@ import {
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 import useStyles from "./styles";
 import {
@@ -37,6 +38,7 @@ const MovieInfo = () => {
 	const [open, setOpen] = useState(false);
 	const [isMovieFavorited, setIsMovieFavorited] = useState(false);
 	const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
+	const token = localStorage.getItem("request_token");
 
 	const { id } = useParams();
 	const classes = useStyles();
@@ -82,30 +84,38 @@ const MovieInfo = () => {
 
 	//* add movie to favorites
 	const addToFavorites = async () => {
-		await axios.post(
-			`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${lsSessionId}`,
-			{
-				media_type: "movie",
-				media_id: id,
-				favorite: !isMovieFavorited,
-			}
-		);
+		if (token) {
+			await axios.post(
+				`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${lsSessionId}`,
+				{
+					media_type: "movie",
+					media_id: id,
+					favorite: !isMovieFavorited,
+				}
+			);
 
-		setIsMovieFavorited((prev) => !prev);
+			setIsMovieFavorited((prev) => !prev);
+		} else {
+			return toast.error("Login Please!");
+		}
 	};
 
 	//* add movie to watchlist
 	const addToWatchList = async () => {
-		await axios.post(
-			`https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${lsSessionId}`,
-			{
-				media_type: "movie",
-				media_id: id,
-				watchlist: !isMovieWatchlisted,
-			}
-		);
+		if (token) {
+			await axios.post(
+				`https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${lsSessionId}`,
+				{
+					media_type: "movie",
+					media_id: id,
+					watchlist: !isMovieWatchlisted,
+				}
+			);
 
-		setIsMovieWatchlisted((prev) => !prev);
+			setIsMovieWatchlisted((prev) => !prev);
+		} else {
+			return toast.error("Login Please!");
+		}
 	};
 
 	if (isFetching) return <Loader />;
