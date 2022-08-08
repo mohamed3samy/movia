@@ -139,7 +139,12 @@ const MovieInfo = () => {
 			</Grid>
 
 			<Grid item container direction="column" lg={7}>
-				<Typography variant="h3" align="center" gutterBottom>
+				<Typography
+					className={classes.movieTitle}
+					variant="h3"
+					align="center"
+					gutterBottom
+				>
 					{data?.title} ({data.release_date.split("-")[0]})
 				</Typography>
 				<Typography variant="h5" align="center" gutterBottom>

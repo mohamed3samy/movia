@@ -25,6 +25,15 @@ export default makeStyles((theme) => ({
 			marginBottom: "30px",
 		},
 	},
+	movieTitle: {
+		fontSize: "3rem !important",
+		[theme.breakpoints.only("sm")]: {
+			fontSize: "2.5rem !important",
+		},
+		[theme.breakpoints.only("xs")]: {
+			fontSize: "1.7rem !important",
+		},
+	},
 	genresContainer: {
 		margin: "10px 0 !imaportant",
 		display: "flex",
@@ -58,7 +67,7 @@ export default makeStyles((theme) => ({
 		[theme.breakpoints.down("sm")]: {
 			flexDirection: "column",
 			justifyContent: "center",
-			gap: '1rem'
+			gap: "1rem",
 		},
 	},
 	modal: {
