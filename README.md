@@ -2,7 +2,7 @@
 
 ![App Screenshot](src/assets/images/movia.png)
 
-Movia is an interactive movie app combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Material UI, Redux Toolkit, and Alan AI.
+Movia is an interactive movie app that combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Material UI, Redux Toolkit, and Alan AI.
 
 This application includes user authentication, dark mode, sorting movies based on categories or genres, viewing movie and actor details, adding a movie to favorites or watchlist, and many more functionalities.
 
