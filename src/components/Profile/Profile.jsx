@@ -30,7 +30,9 @@ const Profile = () => {
 	}, [refetchFavorites, refetchWatchlisted]);
 
 	const logout = () => {
-		localStorage.clear();
+		const keysToRemove = ["request_token", "session_id", "accountId"];
+
+		keysToRemove.forEach((k) => localStorage.removeItem(k));
 		window.location.href = "/";
 	};
 
