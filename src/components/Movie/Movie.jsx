@@ -1,5 +1,5 @@
+import { Grid, Grow, Rating, Tooltip, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 
 import useStyles from "./styles";
 

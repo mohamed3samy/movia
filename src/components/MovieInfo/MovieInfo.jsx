@@ -1,38 +1,38 @@
-import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
 import {
-	Modal,
-	Typography,
+	ArrowBack,
+	Favorite,
+	FavoriteBorderOutlined,
+	Language,
+	Movie as MovieIcon,
+	PlusOne,
+	Remove,
+	Theaters,
+} from "@mui/icons-material";
+import {
+	Box,
 	Button,
 	ButtonGroup,
 	Grid,
-	Box,
+	Modal,
 	Rating,
+	Typography,
 } from "@mui/material";
-import {
-	Movie as MovieIcon,
-	Theaters,
-	Language,
-	PlusOne,
-	Favorite,
-	FavoriteBorderOutlined,
-	Remove,
-	ArrowBack,
-} from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-import useStyles from "./styles";
+import genreIcons from "../../assets/genres";
+import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import {
+	useGetListQuery,
 	useGetMovieQuery,
 	useGetRecommendationsQuery,
-	useGetListQuery,
 } from "../../services/TMDB";
-import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import MovieList from "../MovieList/MovieList";
 import Loader from "../UI/Loader";
-import genreIcons from "../../assets/genres";
+import useStyles from "./styles";
 
 const MovieInfo = () => {
 	const [open, setOpen] = useState(false);

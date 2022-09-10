@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { Typography, Button, Box } from "@mui/material";
 import { ExitToApp } from "@mui/icons-material";
+import { Box, Button, Typography } from "@mui/material";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { useGetListQuery } from "../../services/TMDB";

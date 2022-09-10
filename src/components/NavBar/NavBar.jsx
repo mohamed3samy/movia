@@ -1,28 +1,28 @@
-import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import {
-	AppBar,
-	IconButton,
-	Toolbar,
-	Drawer,
-	Button,
-	Avatar,
-	useMediaQuery,
-} from "@mui/material";
-import {
-	Menu,
 	AccountCircle,
 	Brightness4,
 	Brightness7,
+	Menu,
 } from "@mui/icons-material";
+import {
+	AppBar,
+	Avatar,
+	Button,
+	Drawer,
+	IconButton,
+	Toolbar,
+	useMediaQuery,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { setUser } from "../../features/auth";
-import { fetchToken, moviesApi, createSessionId } from "../../utils/index";
+import { createSessionId, fetchToken, moviesApi } from "../../utils/index";
 import { ColorModeContext } from "../../utils/ToggleColorMode";
-import Sidebar from "../Sidebar/Sidebar";
 import Search from "../Search/Search";
+import Sidebar from "../Sidebar/Sidebar";
 import useStyles from "./styles";
 
 const NavBar = () => {

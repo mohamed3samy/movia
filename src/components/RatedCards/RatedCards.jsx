@@ -1,7 +1,6 @@
-import { Typography, Box } from "@mui/material";
-
-import useStyles from "./styles";
+import { Box, Typography } from "@mui/material";
 import Movie from "../Movie/Movie";
+import useStyles from "./styles";
 
 const RatedCards = ({ title, movies }) => {
 	const classes = useStyles();
